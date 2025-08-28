@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dread Library - AI Story Weaver</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.12.0"
+        }
+      }
+    </script>
+    <script type="module" src="index.tsx"></script>
+</head>
+<body>
+    <header>
+        <h1>Dread Library 📜</h1>
+        <p>Weaving tales that haunt and hook for viral Shorts & Reels.</p>
+    </header>
+    <main>
+        <div class="container">
+            <section class="form-container" aria-labelledby="form-heading">
+                <h2 id="form-heading">1. Create Your Story</h2>
+                <form id="script-form">
+                    <div class="form-group">
+                        <label for="character">Main Character</label>
+                        <input type="text" id="character" name="character" placeholder="e.g., A curious little firefly" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="setting">Setting</label>
+                        <input type="text" id="setting" name="setting" placeholder="e.g., A magical, glowing forest" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="object">Core Object</label>
+                        <input type="text" id="object" name="object" placeholder="e.g., A fallen star" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tone">Tone</label>
+                        <select id="tone" name="tone">
+                            <option value="Emotional">Emotional</option>
+                            <option value="Magical">Magical</option>
+                            <option value="Inspirational">Inspirational</option>
+                            <option value="Heartwarming">Heartwarming</option>
+                            <option value="Mysterious">Mysterious</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="length">Length (seconds)</label>
+                        <input type="number" id="length" name="length" value="45" min="15" max="60" required>
+                    </div>
+                    <button type="submit" id="generate-btn">
+                        <span class="btn-text">Generate Script</span>
+                        <div class="spinner" id="spinner" style="display: none;"></div>
+                    </button>
+                </form>
+            </section>
+            <section class="output-container" aria-labelledby="output-heading">
+                 <div class="output-header">
+                    <h2 id="output-heading">2. Your Generated Script</h2>
+                    <button id="copy-btn" style="display: none;">Copy Script</button>
+                </div>
+                <div id="output" aria-live="polite">
+                    <p class="placeholder">Your magical script will appear here...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Powered by Google Gemini</p>
+    </footer>
+</body>
+</html>
